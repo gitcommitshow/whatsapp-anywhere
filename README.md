@@ -2,6 +2,8 @@
 
 A browser extension to turn any phone number into clickable whatsapp link
 
+![Screenshot](./screenshot.gif)
+
 ## How to install
 
 ### On Chrome Browser
