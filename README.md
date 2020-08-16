@@ -4,7 +4,7 @@
 
 ![Screenshot-setting-template-message](./screenshot_template_msg.gif)
 
-A browser extension to turn any phone number into clickable whatsapp link
+A browser extension to turn any phone number on web into a clickable whatsapp link
 
 ## How to install
 
