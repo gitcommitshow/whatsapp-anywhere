@@ -10,7 +10,7 @@ A browser extension to turn any phone number on web into a clickable whatsapp li
 
 ### On Chrome Browser
 
-Easiest way to install the extension is via [chrome web store](https://chrome.google.com/webstore/detail/whatsappmessage/heffladfhbegcoandackbpkddkin)
+Easiest way to install the extension is via [chrome web store](https://chrome.google.com/webstore/detail/whatsappanywhere/heffladfhbegcoandackbpkddkinfmag)
 
 Alternatively you can install from the source code directly. Here's a [guide to install the chrome extension from source code](https://stackoverflow.com/a/24577660).
 
