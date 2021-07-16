@@ -1,7 +1,10 @@
 {
     "name": "WhatsappAnywhere",
     "browser_specific_settings": {
-      "strict_min_version": "89.0.2"
+      "gecko": {
+        "id": "",
+        "strict_min_version": "89.0.2"
+      }
     },
     "version": "1.0.0",
     "description": "Turn any phone number into clickable whatsapp link",
