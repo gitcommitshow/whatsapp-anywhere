@@ -13,13 +13,13 @@ const _utility = {
 	 	}
 	 	//Format the selection - remove the non-digit characters
 	 	var phone = phonestring.replace(/\D+/g,'');
-	 	//Create the url with the given text and message api url 
-	 	if(!phone || phone.length<10){
-			return cb("#NotAPhoneNumber");
-	 	} else if(phone.length<11){
-	 		return cb(MESSAGE_API_URL+configs.defaultCountryCode+phone+"&text="+encodeURIComponent(configs.defaultMessage));
-	  	} else if(phone.length<14){
-			return cb(MESSAGE_API_URL+phone+"&text="+encodeURIComponent(configs.defaultMessage));
+		//Create the url with the given text and message api url
+	 	if (9 < phone?.length && phone.length < 15) {
+	 		if (phone.startsWith(configs.defaultCountryCode) && phone.length < 12) {
+				return cb(MESSAGE_API_URL+phone+"&text="+encodeURIComponent(configs.defaultMessage));
+	 		} else {
+				return cb(MESSAGE_API_URL+configs.defaultCountryCode+phone+"&text="+encodeURIComponent(configs.defaultMessage));
+			}
 	 	} else {
 			return cb("#NotAPhoneNumber");
 		}
