@@ -12,17 +12,17 @@ const _utility = {
 			return cb("#NotAPhoneNumber");
 	 	}
 	 	//Format the selection - remove the non-digit characters
-	 	var phone = phonestring.replace(/\D+/g,'');
+	 	var phone = phonestring.substring(4).replace(/[\s-()]+/g,'');
 	 	//Create the url with the given text and message api url 
-	 	if(!phone || phone.length<10){
+	 	if (!phone){
 			return cb("#NotAPhoneNumber");
-	 	} else if(phone.length<11){
-	 		return cb(MESSAGE_API_URL+configs.defaultCountryCode+phone+"&text="+encodeURIComponent(configs.defaultMessage));
-	  	} else if(phone.length<14){
-			return cb(MESSAGE_API_URL+phone+"&text="+encodeURIComponent(configs.defaultMessage));
-	 	} else {
-			return cb("#NotAPhoneNumber");
+	 	} else if(phone.substring(0, 1) !== '+') {
+			prefix = configs.defaultCountryCode;
+	  	} else {
+			prefix = "";
 		}
+		phone = phone.replace(/^[+0]/,''); // strip off leading characters + or 0
+	        return cb(MESSAGE_API_URL+prefix+phone+"&text="+encodeURIComponent(configs.defaultMessage));
     });
   }
 }
