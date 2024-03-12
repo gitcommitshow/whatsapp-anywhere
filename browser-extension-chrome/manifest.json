@@ -23,11 +23,18 @@
         "192": "icons/logo_192x192.png"
     },
     "web_accessible_resources": [
-      "assets/*"
+      {
+        "resources": [
+          "assets/*"
+        ],
+        "matches": [
+          "*://*/*"
+        ]
+      }
     ],
     "options_ui": {
        "page": "options.html",
        "open_in_tab": true
     },
-    "manifest_version": 2
+    "manifest_version": 3
 }
