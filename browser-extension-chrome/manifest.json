@@ -12,10 +12,7 @@
         "js": ["assets/utility.js","addWhatsappLink.js"]
     }],
     "background": { 
-      "scripts": [
-	"assets/utility.js",
-	"whatsappLinkInContextMenu.js"
-	]
+      "service_worker":  "whatsappLinkInContextMenu.js"
     },
     "icons": {
         "16": "icons/logo_16x16.png",

@@ -2,6 +2,8 @@
  Code to be executed for context menu functionality
  **/
 
+importScripts("assets/utility.js")
+
 //Make sure assets/utility.js is loaded so we have access to _utility.getWhatsappMessageUrl 
 function getword(info, tab) {
     _utility.getWhatsappMessageUrl(info.selectionText, function (whatsappMessageUrl) {
@@ -14,5 +16,7 @@ function getword(info, tab) {
 chrome.contextMenus.create({
     title: "Whatsapp: %s",
     contexts: ["selection"],
-    onclick: getword
+    id: "whatsapp-anywhere-context",
 });
+
+chrome.contextMenus.onClicked.addListener(getword)

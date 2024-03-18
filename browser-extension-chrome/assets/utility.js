@@ -11,8 +11,9 @@ const _utility = {
                 return cb("#NotAPhoneNumber");
             }
             // Format the selection - remove the non-digit characters
-            var phone = phonestring.substring(4).replace(/[\s-()]+/g, '');
+            let phone = phonestring.replace(/^tel:/, '').replace(/[\s-()]+/g, '');
             // Create the url with the given text and message api url
+            let prefix;
             if (!phone) {
                 return cb("#NotAPhoneNumber");
             } else if (phone.substring(0, 1) !== "+") {
